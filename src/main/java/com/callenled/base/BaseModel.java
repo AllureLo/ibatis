@@ -1,6 +1,7 @@
-package com.callenled.ibatis;
+package com.callenled.base;
 
-import com.callenled.ibatis.annotation.ColumnName;
+import com.baomidou.mybatisplus.annotation.*;
+import org.apache.ibatis.type.JdbcType;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,24 +17,26 @@ public abstract class BaseModel implements Serializable {
     /**
      * 主键
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
      * 创建时间
      */
-    @ColumnName(value = "create_time")
+    @TableField(value = "create_time", fill=FieldFill.INSERT, jdbcType = JdbcType.TIMESTAMP)
     private Date createTime;
 
     /**
      * 修改时间
      */
-    @ColumnName(value = "update_time")
+    @TableField(value = "update_time", fill=FieldFill.INSERT_UPDATE, jdbcType = JdbcType.TIMESTAMP)
     private Date updateTime;
 
     /**
      * 是否删除
      */
-    @ColumnName(value = "is_delete")
+    @TableField(value = "is_delete", fill=FieldFill.INSERT, jdbcType = JdbcType.INTEGER)
+    @TableLogic(value = "0", delval = "1")
     private Integer isDelete;
 
     public Long getId() {
@@ -64,7 +67,7 @@ public abstract class BaseModel implements Serializable {
         return isDelete;
     }
 
-    public void setIsDelete(Integer isDelete) {
+    protected void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
 }

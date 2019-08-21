@@ -1,5 +1,7 @@
 package com.callenled.service.impl;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.callenled.base.BaseServiceImpl;
 import com.callenled.mapper.TestMapper;
 import com.callenled.model.po.Test;
 import com.callenled.service.TestService;
@@ -16,12 +18,14 @@ public class TestServiceImpl extends BaseServiceImpl<Test> implements TestServic
     @Autowired
     private TestMapper testMapper;
 
+
     @Override
-    public Class<Test> getClazz() {
-        return Test.class;
+    public BaseMapper<Test> getBaseMapper() {
+        return testMapper;
     }
 
-    public void test() {
-        
+    @Override
+    public Class<Test> getEntityClass() {
+        return Test.class;
     }
 }

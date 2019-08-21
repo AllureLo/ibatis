@@ -1,7 +1,6 @@
 package com.callenled.controller;
 
 import com.callenled.bean.Result;
-import com.callenled.mapper.TestMapper;
 import com.callenled.model.po.Test;
 import com.callenled.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +36,9 @@ public class CommonController {
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     public Result update(@RequestParam(value = "id") Long id,
-                      @RequestParam(value = "param") String param) {
-        Test test = testService.queryById(id);
+                         @RequestParam(value = "param") String param) {
+        Test test = new Test();
+        test.setId(id);
         test.setParam(param);
         testService.save(test);
         return Result.success(test);

@@ -1,12 +1,13 @@
 package com.callenled.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.callenled.model.po.Test;
 
 /**
  * @Author: callenled
  * @Date: 19-8-16 下午4:35
  */
-@Mapper
-public interface TestMapper extends BaseMapper {
+
+public interface TestMapper extends BaseMapper<Test> {
 
 }

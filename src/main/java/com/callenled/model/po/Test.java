@@ -1,15 +1,13 @@
 package com.callenled.model.po;
 
-import com.callenled.ibatis.annotation.ColumnList;
-import com.callenled.ibatis.annotation.TableName;
-import com.callenled.ibatis.BaseModel;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.callenled.base.BaseModel;
 
 /**
  * @Author: callenled
  * @Date: 19-8-16 下午4:03
  */
 @TableName(value = "test")
-@ColumnList(value = "id, param, create_time, update_time, is_delete")
 public class Test extends BaseModel {
 
     private static final long serialVersionUID = 2710501552813073973L;

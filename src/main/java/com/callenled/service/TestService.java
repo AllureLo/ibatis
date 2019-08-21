@@ -1,5 +1,7 @@
 package com.callenled.service;
 
+
+import com.callenled.base.BaseService;
 import com.callenled.model.po.Test;
 
 /**
