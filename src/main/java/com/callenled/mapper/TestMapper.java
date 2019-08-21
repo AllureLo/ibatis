@@ -2,6 +2,7 @@ package com.callenled.mapper;
 
 import com.callenled.base.BaseMapper;
 import com.callenled.model.po.Test;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @Author: callenled
@@ -9,5 +10,7 @@ import com.callenled.model.po.Test;
  */
 
 public interface TestMapper extends BaseMapper<Test> {
+
+    Test findById(@Param("id") Long id);
 
 }

@@ -14,4 +14,11 @@
     <sql id="Base_Table_Name">
         test
     </sql>
+    <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM
+        <include refid="Base_Table_Name" />
+        WHERE id = #{id, jdbcType=BIGINT}
+    </select>
 </mapper>

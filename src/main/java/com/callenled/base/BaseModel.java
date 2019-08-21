@@ -67,7 +67,7 @@ public abstract class BaseModel implements Serializable {
         return isDelete;
     }
 
-    protected void setIsDelete(Integer isDelete) {
+    public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
 }

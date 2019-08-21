@@ -34,6 +34,12 @@ public class CommonController {
         return Result.success(test);
     }
 
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public Result delete(@RequestParam(value = "id") Long id) {
+        testService.deleteById(id);
+        return Result.success();
+    }
+
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     public Result update(@RequestParam(value = "id") Long id,
                          @RequestParam(value = "param") String param) {
