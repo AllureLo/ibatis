@@ -30,7 +30,7 @@ spring:
       #classpath目录下的WEB-INF文件夹内容修改不重启
       exclude: WEB-INF/**
       #设置重启的目录
-      additional-paths: target/classes/
+      additional-paths: src/main/
   #页面不加载缓存，修改即时生效
   freemarker:
     cache: false

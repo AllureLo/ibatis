@@ -1,7 +1,7 @@
 package com.callenled.base;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @Author: callenled
@@ -9,12 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public abstract class BaseServiceImpl<T extends BaseModel> implements BaseService<T> {
 
-    /**
-     * mapper类
-     *
-     * @return
-     */
-    public abstract BaseMapper<T> getBaseMapper();
+    @Autowired
+    private BaseMapper<T> mapper;
 
     /**
      * model实体类型
@@ -34,17 +30,17 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
 
     @Override
     public void insert(T object) {
-        getBaseMapper().insert(object);
+        mapper.insert(object);
     }
 
     @Override
     public void updateById(T object) {
-        getBaseMapper().updateById(object);
+        mapper.updateById(object);
     }
 
     @Override
     public void deleteById(Long id) {
-        getBaseMapper().deleteById(id);
+        mapper.deleteById(id);
     }
 
     /*@Override
@@ -62,9 +58,8 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
 
     @Override
     public T queryById(Long id) {
-        return getBaseMapper().selectOne(new QueryWrapper<T>()
+        return mapper.selectOne(new QueryWrapper<T>()
                 .lambda()
-                .eq(T::getId, id)
                 .eq(T::getIsDelete, 0)
         );
     }

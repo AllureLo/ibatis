@@ -1,6 +1,6 @@
 package com.callenled.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.callenled.base.BaseMapper;
 import com.callenled.model.po.Test;
 
 /**
