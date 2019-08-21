@@ -34,6 +34,14 @@ public class CommonController {
         return Result.success(test);
     }
 
+    @RequestMapping(value = "/getOne", method = RequestMethod.GET)
+    public Result getOne(@RequestParam(value = "id") Long id) {
+        Test test = new Test();
+        test.setId(id);
+        test = testService.queryOne(test);
+        return Result.success(test);
+    }
+
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public Result delete(@RequestParam(value = "id") Long id) {
         testService.deleteById(id);
