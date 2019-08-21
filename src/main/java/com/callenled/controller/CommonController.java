@@ -54,7 +54,7 @@ public class CommonController {
         Test test = new Test();
         test.setId(id);
         test.setParam(param);
-        testService.save(test);
+        testService.selfUpdateById(test);
         return Result.success(test);
     }
 }

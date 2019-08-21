@@ -15,11 +15,13 @@
     <sql id="Base_Table_Name">
         test
     </sql>
-    <select id="findById" parameterType="java.lang.Long" resultMap="BaseResultMap">
-        SELECT
-        <include refid="Base_Column_List" />
-        FROM
+    <update id="selfUpdateById" parameterType="com.callenled.model.po.Test">
+        UPDATE
         <include refid="Base_Table_Name" />
+        SET
+        <if test="param != null">
+            param = #{param, jdbcType=VARCHAR}
+        </if>
         WHERE id = #{id, jdbcType=BIGINT}
-    </select>
+    </update>
 </mapper>

@@ -1,9 +1,8 @@
 package com.callenled.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.callenled.base.BaseMapper;
 import com.callenled.model.po.Test;
 import org.apache.ibatis.annotations.CacheNamespace;
-import org.apache.ibatis.annotations.Param;
 
 /**
  * @Author: callenled
@@ -12,5 +11,10 @@ import org.apache.ibatis.annotations.Param;
 @CacheNamespace
 public interface TestMapper extends BaseMapper<Test> {
 
-    Test findById(@Param("id") Long id);
+    /**
+     * 自写的修改语句
+     *
+     * @param entity
+     */
+    void selfUpdateById(Test entity);
 }

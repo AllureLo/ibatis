@@ -1,7 +1,6 @@
 package com.callenled.service.impl;
 
-
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.callenled.base.BaseMapper;
 import com.callenled.base.BaseServiceImpl;
 import com.callenled.mapper.TestMapper;
 import com.callenled.model.po.Test;
@@ -22,5 +21,10 @@ public class TestServiceImpl extends BaseServiceImpl<Test> implements TestServic
     @Override
     public BaseMapper<Test> mapper() {
         return testMapper;
+    }
+
+    @Override
+    public void selfUpdateById(Test entity) {
+        testMapper.selfUpdateById(entity);
     }
 }

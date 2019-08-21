@@ -10,4 +10,5 @@ import com.callenled.model.po.Test;
  */
 public interface TestService extends BaseService<Test> {
 
+    void selfUpdateById(Test entity);
 }
