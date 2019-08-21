@@ -41,4 +41,12 @@ public interface BaseService<T extends BaseModel> {
      * @return T
      */
     T queryById(Long id);
+
+    /**
+     * 条件查询某条数据
+     *
+     * @param object
+     * @return
+     */
+    T queryOne(T object);
 }

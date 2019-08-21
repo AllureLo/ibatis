@@ -43,24 +43,24 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
         mapper.deleteById(id);
     }
 
-    /*@Override
-    public T queryById(Long id) {
-        try {
-            T object = getEntityClass().newInstance();
-            object.setId(id);
-            object.setIsDelete(0);
-            return getBaseMapper().selectOne(new QueryWrapper<>(object));
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }*/
-
     @Override
     public T queryById(Long id) {
-        return mapper.selectOne(new QueryWrapper<T>()
-                .lambda()
-                .eq(T::getIsDelete, 0)
-        );
+        T entity;
+        try {
+            entity = getEntityClass().newInstance();
+            entity.setId(id);
+            entity.setIsDelete(0);
+        } catch (InstantiationException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+        return queryOne(entity);
+    }
+
+    @Override
+    public T queryOne(T entity) {
+        if (entity == null) {
+            throw new RuntimeException("entity can not be null");
+        }
+        return mapper.selectOne(new QueryWrapper<>(entity));
     }
 }
