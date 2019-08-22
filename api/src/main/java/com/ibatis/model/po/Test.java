@@ -1,6 +1,7 @@
 package com.ibatis.model.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.ibatis.base.BaseModel;
 
 /**
  * @Author: ibatis

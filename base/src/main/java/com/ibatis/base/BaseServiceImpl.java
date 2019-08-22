@@ -3,7 +3,6 @@ package com.ibatis.base;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.ibatis.model.po.BaseModel;
 
 import java.util.List;
 

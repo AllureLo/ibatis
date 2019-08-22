@@ -1,7 +1,6 @@
 package com.ibatis.base;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.ibatis.model.po.BaseModel;
 
 import java.util.List;
 

@@ -12,6 +12,7 @@
         <module>service</module>
         <module>api</module>
         <module>web</module>
+        <module>base</module>
     </modules>
 
     <parent>

@@ -1,4 +1,4 @@
-package com.ibatis.model.po;
+package com.ibatis.base;
 
 import com.baomidou.mybatisplus.annotation.*;
 import org.apache.ibatis.type.JdbcType;
