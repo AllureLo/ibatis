@@ -25,6 +25,13 @@ public interface BaseService<T extends BaseModel> {
     void insert(T entity);
 
     /**
+     * 批量新增
+     *
+     * @param entities 待新增的实体列表
+     */
+    void insertBatch(List<T> entities);
+
+    /**
      * 修改
      *
      * @param entity   待修改的实体类
@@ -37,6 +44,13 @@ public interface BaseService<T extends BaseModel> {
      * @param id       主键id
      */
     void deleteById(Long id);
+
+    /**
+     * 根据主键批量逻辑删除
+     *
+     * @param ids      主键id列表
+     */
+    void deleteBatchByIds(List<Long> ids);
 
     /**
      * 根据主键查询
@@ -69,6 +83,14 @@ public interface BaseService<T extends BaseModel> {
      * @return list
      */
     List<T> queryList(T entity);
+
+    /**
+     * 批量根据主键id查询数据列表
+     *
+     * @param ids      主键id列表
+     * @return
+     */
+    List<T> queryListByIds(List<Long> ids);
 
     /**
      * 条件查询数据列表(分页)

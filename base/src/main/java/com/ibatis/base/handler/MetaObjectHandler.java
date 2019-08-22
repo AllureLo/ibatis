@@ -1,6 +1,5 @@
-package com.ibatis.base;
+package com.ibatis.base.handler;
 
-import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +12,9 @@ import java.util.Date;
  * @Date: 19-8-20 下午7:17
  */
 @Component
-public class MyMetaObjectHandler implements MetaObjectHandler {
+public class MetaObjectHandler implements com.baomidou.mybatisplus.core.handlers.MetaObjectHandler {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MyMetaObjectHandler.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MetaObjectHandler.class);
 
     @Override
     public void insertFill(MetaObject metaObject) {

@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Author: ibatis
  * @Date: 19-8-16 下午2:31
@@ -37,6 +40,17 @@ public class CommonController {
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public Result delete(@RequestParam(value = "id") Long id) {
         testService.deleteById(id);
+        return Result.success();
+    }
+
+    @RequestMapping(value = "/deleteBatch", method = RequestMethod.GET)
+    public Result deleteBatch(@RequestParam(value = "ids") String ids) {
+        String[] idArray = ids.split(",");
+        List<Long> idList = new ArrayList<>();
+        for (String id : idArray) {
+            idList.add(Long.parseLong(id));
+        }
+        testService.deleteBatchByIds(idList);
         return Result.success();
     }
 

@@ -34,6 +34,11 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
     }
 
     @Override
+    public void insertBatch(List<T> entities) {
+        entities.forEach(this::insert);
+    }
+
+    @Override
     public void updateById(T entity) {
         mapper().updateById(entity);
     }
@@ -41,6 +46,11 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
     @Override
     public void deleteById(Long id) {
         mapper().deleteByIdWithFill(id);
+    }
+
+    @Override
+    public void deleteBatchByIds(List<Long> ids) {
+        mapper().deleteBatchByIdsWithFill(ids);
     }
 
     @Override
@@ -61,6 +71,11 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
     @Override
     public List<T> queryList(T entity) {
         return mapper().selectList(new QueryWrapper<>(entity));
+    }
+
+    @Override
+    public List<T> queryListByIds(List<Long> ids) {
+        return mapper().selectBatchIds(ids);
     }
 
     @Override
