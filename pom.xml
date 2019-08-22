@@ -6,7 +6,13 @@
 
     <groupId>com.callenled</groupId>
     <artifactId>ibatis</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>service</module>
+        <module>api</module>
+        <module>web</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -90,23 +96,5 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.2</version>
         </dependency>
-        <!-- 热部署 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
