@@ -7,4 +7,11 @@ package com.callenled.base;
 
 public interface BaseMapper<T> extends com.baomidou.mybatisplus.core.mapper.BaseMapper<T> {
 
+    /**
+     * 逻辑删除(修改updateTime)
+     *
+     * @param id       主键id
+     * @return int
+     */
+    int deleteByIdWithFill(Long id);
 }

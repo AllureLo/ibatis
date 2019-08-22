@@ -29,7 +29,7 @@ public abstract class BaseModel implements Serializable {
     /**
      * 修改时间
      */
-    @TableField(value = "update_time", fill=FieldFill.INSERT_UPDATE, jdbcType = JdbcType.TIMESTAMP)
+    @TableField(value = "update_time", fill=FieldFill.INSERT_UPDATE, update = "now()", jdbcType = JdbcType.TIMESTAMP)
     private Date updateTime;
 
     /**

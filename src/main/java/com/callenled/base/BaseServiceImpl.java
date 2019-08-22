@@ -40,7 +40,7 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
 
     @Override
     public void deleteById(Long id) {
-        mapper().deleteById(id);
+        mapper().deleteByIdWithFill(id);
     }
 
     @Override
