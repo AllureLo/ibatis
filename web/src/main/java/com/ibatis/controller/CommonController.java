@@ -30,7 +30,7 @@ public class CommonController {
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     public Result get(@RequestParam(value = "id") Long id) {
-        Test test = testService.selfSelectById(id);
+        Test test = testService.queryById(id);
         return Result.success(test);
     }
 
