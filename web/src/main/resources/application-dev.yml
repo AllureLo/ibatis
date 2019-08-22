@@ -38,4 +38,4 @@ spring:
 logging:
   level:
     # 打印sql
-    com.callenled.mapper: debug
+    com.ibatis.mapper: debug
