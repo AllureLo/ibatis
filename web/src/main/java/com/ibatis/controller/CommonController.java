@@ -82,4 +82,10 @@ public class CommonController {
         testService.updateById(test);
         return Result.success(test);
     }
+
+    @RequestMapping(value = "/getList", method = RequestMethod.GET)
+    public Result getList(@RequestParam(value = "pageNum") Integer pageNum,
+                          @RequestParam(value = "pageSize", required = false, defaultValue = "6") Integer pageSize) {
+        return Result.success(testService.queryPage(null, pageNum, pageSize));
+    }
 }
