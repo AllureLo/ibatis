@@ -22,9 +22,9 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
     @Override
     public void save(T entity) {
         if (entity.getId() == null) {
-            insert(entity);
+            this.insert(entity);
         } else {
-            updateById(entity);
+            this.updateById(entity);
         }
     }
 
