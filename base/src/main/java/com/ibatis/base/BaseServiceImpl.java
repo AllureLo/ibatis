@@ -69,8 +69,8 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
     }
 
     @Override
-    public List<T> queryList(T entity) {
-        return mapper().selectList(new QueryWrapper<>(entity));
+    public List<T> queryList(T entity, int pageNum, int pageSize) {
+        return mapper().selectList(new QueryWrapper<>(entity).last("limit " + (pageNum - 1) * pageSize + "," + pageSize));
     }
 
     @Override
@@ -81,6 +81,15 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
     @Override
     public IPage<T> queryPage(T entity, int pageNum, int pageSize) {
         IPage<T> page = new Page<>(pageNum, pageSize);
-        return mapper().selectPage(page, new QueryWrapper<>(entity));
+
+        int total = queryCount(entity);
+        page.setTotal(total);
+
+        if (total > 0) {
+            List<T> records = this.queryList(entity, pageNum, pageSize);
+            page.setRecords(records);
+        }
+
+        return page;
     }
 }

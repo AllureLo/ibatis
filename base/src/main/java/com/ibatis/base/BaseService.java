@@ -80,9 +80,11 @@ public interface BaseService<T extends BaseModel> {
      * 条件查询数据列表
      *
      * @param entity   查询条件的实体类
+     * @param pageNum  当前页数
+     * @param pageSize 页数大小
      * @return list
      */
-    List<T> queryList(T entity);
+    List<T> queryList(T entity, int pageNum, int pageSize);
 
     /**
      * 批量根据主键id查询数据列表
