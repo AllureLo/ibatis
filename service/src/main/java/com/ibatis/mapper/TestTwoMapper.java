@@ -1,7 +1,7 @@
 package com.ibatis.mapper;
 
 import com.ibatis.base.BaseMapper;
-import com.ibatis.model.po.TestTwo;
+import com.ibatis.entity.po.TestTwo;
 import org.apache.ibatis.annotations.CacheNamespace;
 
 /**

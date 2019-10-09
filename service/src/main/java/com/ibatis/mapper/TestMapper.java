@@ -1,6 +1,6 @@
 package com.ibatis.mapper;
 
-import com.ibatis.model.po.Test;
+import com.ibatis.entity.po.Test;
 import com.ibatis.base.BaseMapper;
 import org.apache.ibatis.annotations.CacheNamespace;
 

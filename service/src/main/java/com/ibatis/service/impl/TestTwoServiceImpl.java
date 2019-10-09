@@ -3,7 +3,7 @@ package com.ibatis.service.impl;
 import com.ibatis.base.BaseMapper;
 import com.ibatis.base.BaseServiceImpl;
 import com.ibatis.mapper.TestTwoMapper;
-import com.ibatis.model.po.TestTwo;
+import com.ibatis.entity.po.TestTwo;
 import com.ibatis.service.TestTwoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

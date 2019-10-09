@@ -2,8 +2,8 @@ package com.ibatis.controller;
 
 import com.ibatis.base.BaseModel;
 import com.ibatis.bean.Result;
-import com.ibatis.model.po.Test;
-import com.ibatis.model.po.TestTwo;
+import com.ibatis.entity.po.Test;
+import com.ibatis.entity.po.TestTwo;
 import com.ibatis.service.TestService;
 import com.ibatis.service.TestTwoService;
 import org.springframework.beans.factory.annotation.Autowired;

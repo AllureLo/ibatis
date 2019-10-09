@@ -1,6 +1,6 @@
 package com.ibatis.service.impl;
 
-import com.ibatis.model.po.Test;
+import com.ibatis.entity.po.Test;
 import com.ibatis.base.BaseMapper;
 import com.ibatis.base.BaseServiceImpl;
 import com.ibatis.mapper.TestMapper;

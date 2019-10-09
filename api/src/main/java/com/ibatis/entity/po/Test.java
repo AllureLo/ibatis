@@ -1,4 +1,4 @@
-package com.ibatis.model.po;
+package com.ibatis.entity.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.ibatis.base.BaseModel;

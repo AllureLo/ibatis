@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ibatis.mapper.TestMapper">
     <cache-ref namespace="com.ibatis.mapper.TestMapper"/>
-    <resultMap id="BaseResultMap" type="com.ibatis.model.po.Test">
+    <resultMap id="BaseResultMap" type="com.ibatis.entity.po.Test">
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="param" property="param" jdbcType="VARCHAR" />
         <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -15,7 +15,7 @@
     <sql id="Base_Table_Name">
         test
     </sql>
-    <update id="selfUpdateById" parameterType="com.ibatis.model.po.Test">
+    <update id="selfUpdateById" parameterType="com.ibatis.entity.po.Test">
         UPDATE
         <include refid="Base_Table_Name" />
         SET

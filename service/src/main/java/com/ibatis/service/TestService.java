@@ -1,6 +1,6 @@
 package com.ibatis.service;
 
-import com.ibatis.model.po.Test;
+import com.ibatis.entity.po.Test;
 import com.ibatis.base.BaseService;
 
 /**
