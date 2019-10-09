@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://120.78.161.202:3306/callenled?useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT&zeroDateTimeBehavior=convertToNull
+      username: callenled
+      password: Chen.123456
+      # 配置初始化大小、最小、最大
+      initialSize: 1
+      minIdle: 1
+      maxActive: 50
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+      validationQuery: select 'x'
+      validationQueryTimeout: 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      filters: stat
+  #热部署生效
+  devtools:
+    restart:
+      enabled: true
+      #classpath目录下的WEB-INF文件夹内容修改不重启
+      exclude: WEB-INF/**
+      #设置重启的目录
+      additional-paths: src/main/
+  #页面不加载缓存，修改即时生效
+  freemarker:
+    cache: false
+
+logging:
+  level:
+    # 打印sql
+    com.ibatis.mapper: debug
