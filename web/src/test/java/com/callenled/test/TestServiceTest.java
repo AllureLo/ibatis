@@ -27,7 +27,7 @@ public class TestServiceTest {
     @Test
     public void queryById() {
         long startTime = System.currentTimeMillis();
-        com.ibatis.entity.po.Test test = testService.queryById(7L);
+        com.ibatis.entity.po.Test test = testService.selectById(7L);
         long endTime = System.currentTimeMillis();
         System.out.println(endTime - startTime);
     }

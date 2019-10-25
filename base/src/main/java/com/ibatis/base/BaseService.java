@@ -58,7 +58,7 @@ public interface BaseService<T extends BaseModel> {
      * @param id       主键id
      * @return T
      */
-    T queryById(Long id);
+    T selectById(Long id);
 
     /**
      * 条件查询单条数据
@@ -66,7 +66,7 @@ public interface BaseService<T extends BaseModel> {
      * @param entity   查询条件的实体类
      * @return T
      */
-    T queryOne(T entity);
+    T selectOne(T entity);
 
     /**
      * 条件查询数据量
@@ -74,7 +74,7 @@ public interface BaseService<T extends BaseModel> {
      * @param entity   查询条件的实体类
      * @return int
      */
-    int queryCount(T entity);
+    int selectCount(T entity);
 
     /**
      * 条件查询数据列表
@@ -84,7 +84,7 @@ public interface BaseService<T extends BaseModel> {
      * @param pageSize 页数大小
      * @return list
      */
-    List<T> queryList(T entity, int pageNum, int pageSize);
+    List<T> selectList(T entity, int pageNum, int pageSize);
 
     /**
      * 批量根据主键id查询数据列表
@@ -92,7 +92,7 @@ public interface BaseService<T extends BaseModel> {
      * @param ids      主键id列表
      * @return
      */
-    List<T> queryListByIds(List<Long> ids);
+    List<T> selectByIds(List<Long> ids);
 
     /**
      * 条件查询数据列表(分页)
@@ -102,5 +102,5 @@ public interface BaseService<T extends BaseModel> {
      * @param pageSize 页数大小
      * @return page
      */
-    IPage<T> queryPage(T entity, int pageNum, int pageSize);
+    IPage<T> selectForPage(T entity, int pageNum, int pageSize);
 }

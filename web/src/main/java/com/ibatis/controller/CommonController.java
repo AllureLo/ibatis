@@ -49,9 +49,11 @@ public class CommonController {
                       @RequestParam(value = "type", required = false, defaultValue = "0") Integer type) {
         BaseModel baseModel;
         if (type == 0) {
-            baseModel = testService.queryById(id);
+            baseModel = testService.selectById(id);
+        } else if (type == 1) {
+            baseModel = testTwoService.selectById(id);
         } else {
-            baseModel = testTwoService.queryById(id);
+            baseModel = testService.selfSelectById(id);
         }
         return Result.success(baseModel);
     }
@@ -86,6 +88,6 @@ public class CommonController {
     @RequestMapping(value = "/getList", method = RequestMethod.GET)
     public Result getList(@RequestParam(value = "pageNum") Integer pageNum,
                           @RequestParam(value = "pageSize", required = false, defaultValue = "6") Integer pageSize) {
-        return Result.success(testService.queryPage(null, pageNum, pageSize));
+        return Result.success(testService.selectForPage(null, pageNum, pageSize));
     }
 }

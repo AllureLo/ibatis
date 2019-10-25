@@ -54,39 +54,39 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
     }
 
     @Override
-    public T queryById(Long id) {
+    public T selectById(Long id) {
         return mapper().selectById(id);
     }
 
     @Override
-    public T queryOne(T entity) {
+    public T selectOne(T entity) {
         return mapper().selectOne(new QueryWrapper<>(entity));
     }
 
     @Override
-    public int queryCount(T entity) {
+    public int selectCount(T entity) {
         return mapper().selectCount(new QueryWrapper<>(entity));
     }
 
     @Override
-    public List<T> queryList(T entity, int pageNum, int pageSize) {
+    public List<T> selectList(T entity, int pageNum, int pageSize) {
         return mapper().selectList(new QueryWrapper<>(entity).last("limit " + (pageNum - 1) * pageSize + "," + pageSize));
     }
 
     @Override
-    public List<T> queryListByIds(List<Long> ids) {
+    public List<T> selectByIds(List<Long> ids) {
         return mapper().selectBatchIds(ids);
     }
 
     @Override
-    public IPage<T> queryPage(T entity, int pageNum, int pageSize) {
+    public IPage<T> selectForPage(T entity, int pageNum, int pageSize) {
         IPage<T> page = new Page<>(pageNum, pageSize);
 
-        int total = queryCount(entity);
+        int total = selectCount(entity);
         page.setTotal(total);
 
         if (total > 0) {
-            List<T> records = this.queryList(entity, pageNum, pageSize);
+            List<T> records = this.selectList(entity, pageNum, pageSize);
             page.setRecords(records);
         }
 
