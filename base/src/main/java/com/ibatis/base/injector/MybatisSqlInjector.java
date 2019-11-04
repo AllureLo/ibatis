@@ -18,6 +18,7 @@ public class MybatisSqlInjector extends DefaultSqlInjector {
     /**
      * 如果只需增加方法，保留MP自带方法
      * 可以super.getMethodList() 再add
+     *
      * @return
      */
     @Override

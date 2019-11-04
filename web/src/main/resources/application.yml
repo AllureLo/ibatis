@@ -38,8 +38,8 @@ mybatis-plus:
 logging:
   file: /springboot.log
   level:
-   org:
-    springframework:
-     web: INFO
-   com:
-    chao: INFO
+    org:
+      springframework:
+        web: INFO
+    com:
+      chao: INFO

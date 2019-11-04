@@ -13,14 +13,14 @@ public interface BaseService<T extends BaseModel> {
     /**
      * 存在即更新(根据主键)
      *
-     * @param entity   待保存的实体类
+     * @param entity 待保存的实体类
      */
     void save(T entity);
 
     /**
      * 新增
      *
-     * @param entity   待新增的实体类
+     * @param entity 待新增的实体类
      */
     void insert(T entity);
 
@@ -34,28 +34,28 @@ public interface BaseService<T extends BaseModel> {
     /**
      * 修改
      *
-     * @param entity   待修改的实体类
+     * @param entity 待修改的实体类
      */
     void updateById(T entity);
 
     /**
      * 根据主键逻辑删除
      *
-     * @param id       主键id
+     * @param id 主键id
      */
     void deleteById(Long id);
 
     /**
      * 根据主键批量逻辑删除
      *
-     * @param ids      主键id列表
+     * @param ids 主键id列表
      */
     void deleteBatchByIds(List<Long> ids);
 
     /**
      * 根据主键查询
      *
-     * @param id       主键id
+     * @param id 主键id
      * @return T
      */
     T selectById(Long id);
@@ -63,7 +63,7 @@ public interface BaseService<T extends BaseModel> {
     /**
      * 条件查询单条数据
      *
-     * @param entity   查询条件的实体类
+     * @param entity 查询条件的实体类
      * @return T
      */
     T selectOne(T entity);
@@ -71,7 +71,7 @@ public interface BaseService<T extends BaseModel> {
     /**
      * 条件查询数据量
      *
-     * @param entity   查询条件的实体类
+     * @param entity 查询条件的实体类
      * @return int
      */
     int selectCount(T entity);
@@ -89,7 +89,7 @@ public interface BaseService<T extends BaseModel> {
     /**
      * 批量根据主键id查询数据列表
      *
-     * @param ids      主键id列表
+     * @param ids 主键id列表
      * @return
      */
     List<T> selectByIds(List<Long> ids);

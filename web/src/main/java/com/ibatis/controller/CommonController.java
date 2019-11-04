@@ -30,7 +30,7 @@ public class CommonController {
     private TestTwoService testTwoService;
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public Result add(@RequestParam(value = "param") String param ,
+    public Result add(@RequestParam(value = "param") String param,
                       @RequestParam(value = "type", required = false, defaultValue = "0") Integer type) {
         if (type == 0) {
             Test test = new Test();

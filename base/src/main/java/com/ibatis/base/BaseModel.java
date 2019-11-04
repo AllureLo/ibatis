@@ -10,7 +10,7 @@ import java.util.Date;
  * @Author: ibatis
  * @Date: 19-8-16 下午4:24
  */
-public abstract class BaseModel implements Serializable {
+public class BaseModel implements Serializable {
 
     private static final long serialVersionUID = -717897301219259512L;
 
@@ -23,19 +23,19 @@ public abstract class BaseModel implements Serializable {
     /**
      * 创建时间
      */
-    @TableField(value = "create_time", fill=FieldFill.INSERT, jdbcType = JdbcType.TIMESTAMP)
+    @TableField(value = "create_time", fill = FieldFill.INSERT, jdbcType = JdbcType.TIMESTAMP)
     private Date createTime;
 
     /**
      * 修改时间
      */
-    @TableField(value = "update_time", fill=FieldFill.INSERT_UPDATE, update = "now()", jdbcType = JdbcType.TIMESTAMP)
+    @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE, update = "now()", jdbcType = JdbcType.TIMESTAMP)
     private Date updateTime;
 
     /**
      * 是否删除
      */
-    @TableField(value = "is_delete", fill=FieldFill.INSERT, jdbcType = JdbcType.INTEGER)
+    @TableField(value = "is_delete", fill = FieldFill.INSERT, jdbcType = JdbcType.INTEGER)
     @TableLogic(value = "0", delval = "1")
     private Integer isDelete;
 
